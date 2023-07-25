@@ -1,0 +1,27 @@
+{
+  "name": "trpc-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --config jest-unit.json",
+    "build:client": "",
+    "build:client:watch": "npx ts-node ./scripts/build-watch.client",
+    "start:server": "npx ts-node ./scripts/start",
+    "start:server:watch": "npx ts-node ./scripts/start-watch.server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@trpc/client": "^10.35.0",
+    "@trpc/server": "^10.35.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  },
+  "workspaces": [
+    "./packages/*"
+  ]
+}
