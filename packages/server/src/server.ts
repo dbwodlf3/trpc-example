@@ -1,3 +1,5 @@
+import path from "path";
+
 import * as trpcExpress from "@trpc/server/adapters/express";
 import express from "express";
 import { publicProcedure, router } from "./trpc";
@@ -37,6 +39,7 @@ const appRouter = router({
 export type AppRouter = typeof appRouter;
 
 const app = express();
+const static_path = path.resolve(path.join(__dirname, "../../static"));
 
 app.use(
   "/trpc",
@@ -45,6 +48,12 @@ app.use(
     createContext,
   })
 );
+
+app.use("/public", express.static(static_path));
+
+app.get("/", (req, res) => {
+  res.redirect("public/index.html");
+});
 
 app.listen("8253", () => {
   console.log(`server is listing ${8253}.`);

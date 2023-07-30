@@ -1,10 +1,13 @@
 {
   "compilerOptions": {
-      "resolveJsonModule": true,
+    "moduleResolution": "NodeNext",
       "target": "ES5",
-      "module": "CommonJS",
+      "lib": [
+          "ES2020",
+          "DOM"
+      ],
+      "module": "ESNext",
       "inlineSourceMap": true,
-      "rootDir": "./",
       "removeComments": true,
       "strict": true,
       "baseUrl": "./src",
@@ -12,9 +15,12 @@
       "esModuleInterop": true,
       "skipLibCheck": true,
       "forceConsistentCasingInFileNames": true,
-      "downlevelIteration": true
+      "downlevelIteration": true,
+      "experimentalDecorators": true
   },
-  "include":["./**/*.ts"],
-  "exclude": [
+  "include": [
+      "./**/*.ts",
+      "rollup.config.js"
   ],
+  "exclude": []
 }
