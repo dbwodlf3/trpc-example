@@ -5,7 +5,7 @@ const serverRoot = path.join(projectRoot, "packages", "server");
 const clientRoot = path.join(projectRoot, "packages", "client");
 
 export default {
-  projectRoot,
-  serverRoot,
-  clientRoot,
+    projectRoot,
+    serverRoot,
+    clientRoot,
 };
